@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CreatePost.css">
+    <title>Post</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Create Post</h2>
+
+        <form class="input-group">
+
+            <input type="text" placeholder="Post Title" class="input-field" required>
+            <input type="number" placeholder="Price" class="input-field price" required>
+
+            <p>Service Required</p>
+            <div class="services">
+                <input type="checkbox" class="check-box"><span>Technician</span>
+                <input type="checkbox" class="check-box"><span>Plumber</span>
+                <input type="checkbox" class="check-box"><span>Electrician</span>
+                <input type="checkbox" class="check-box"><span>Carpenter</span>
+                <input type="checkbox" class="check-box"><span>Mechanic</span>
+                <input type="checkbox" class="check-box"><span>Painter</span>
+                <input type="checkbox" class="check-box"><span>Welder</span>
+            </div>
+
+            <p>Service Description</p>
+            <textarea required></textarea>
+
+            <button type="submit" class="submit-btn ">Submit</button>
+
+
+        </form>
+    </div>
+</body>
+
+</html>

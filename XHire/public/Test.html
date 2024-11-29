@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="..\XHire\public\signup.css" />
+    <style>
+        /* Add any additional styles here if needed */
+    </style>
+</head>
+<body>
+    <div class="signup-form">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="Home.aspx">
+                    <img src="..\XHire\public\X-Nitrate_nobg.png" alt="X-Nitrate Logo" /></a>
+            </div>
+        </nav>
+
+        <video style="opacity: 0.8;" autoplay muted loop class="background">
+            <source src="..\XHire\public\tech.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+
+        <h2>Sign Up</h2>
+        <form id="signupForm" onsubmit="return submitForm()">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="form-control" required>
+
+            <!-- Add CssClass attribute with the appropriate class name -->
+            <button type="submit" class="btn btn-primary" id="btnSignUp">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="Login.aspx">Login</a></p>
+        <div class="outputMsg" style="display: none;">
+            <label id="lblMsg">Message has been sent</label>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            // Get name, email, password, and confirm password values
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Validate name, email, password, and confirm password (you can add more validation if needed)
+            if (name.trim() === "" || email.trim() === "" || password.trim() === "" || confirmPassword.trim() === "") {
+                alert("Please fill in all fields");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            // You can perform further validation here if needed
+
+            // Simulate form submission (replace this with your actual form submission logic)
+            // Here, I'm just showing a success message
+            var outputMsg = document.querySelector('.outputMsg');
+            var msgLabel = document.getElementById('lblMsg');
+            outputMsg.style.display = 'block';
+            msgLabel.innerText = 'Sign Up successful!';
+            msgLabel.style.color = 'green';
+
+            // Prevent default form submission
+            return false;
+        }
+    </script>
+</body>
+</html>
